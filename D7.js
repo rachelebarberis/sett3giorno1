@@ -222,35 +222,44 @@ const movies = [
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-function numeriFilm (movies) {
+function numeriFilm () {
   return movies.length;
 }
-const numero1 = numeriFilm(movies);
+const numero1 = numeriFilm();
 console.log(numero1);
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
-function titoli(movies) {
+function titoli() {
   return movies.map(movies=>movies.Title);
 }
 
-const titolo = titoli(movies);
+const titolo = titoli();
 console.log(titolo);
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
-function millenioFilm (movies) {
+function millenioFilm () {
   return movies.filter(film =>film.Year>=2001);
 }
-const millenio = millenioFilm(movies);
+const millenio = millenioFilm();
 console.log(millenio);
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+function sommaFilm () {
+  return movies.reduce((accum,film)=>accum + +film.Year,0);
+}
+const somma = sommaFilm();
+console.log(somma);
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
-
+function filmimdbID (imdbID) {
+  return movies.find(film =>film.imdbID ===imdbID)
+}
+const filmDatrovare =filmimdbID('tt4154796');
+console.log(filmDatrovare);
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
