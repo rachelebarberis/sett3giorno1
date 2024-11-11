@@ -263,3 +263,8 @@ console.log(filmDatrovare);
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+function indiceFilm (anno) {
+  return movies.findIndex(film=>film.Year===anno);
+}
+const indiceDelFilm =indiceFilm('2001');
+console.log(indiceDelFilm);
